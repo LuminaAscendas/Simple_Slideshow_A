@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Environmental Exploitation</title>
+    <meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, maximum-scale=5.0,minimum-scale=1.0, minimal-ui">
+	<meta name="HandheldFriendly" content="true" />
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/swiper.min.css" />
+    <script type="text/javascript" src="assets/js/lib/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="assets/js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="assets/js/lib/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="assets/js/data.js"></script>
+    <script type="text/javascript" src="assets/js/script.js"></script>
+    <script type="text/javascript" src="assets/js/lib/swiper.js"></script>
+</head>
+<body>
+<main>
+	<div id='reverse_extra_tab' role="none"></div>
+	<div role='navigation' style="display:none"></div>
+	<div id='whole_container' role='application'>
+		<div class="preload">
+            <div class="loader"></div>
+        </div> 
+		<div id='text_container'>
+			<div id='dummy_reader' role="none" aria-label='Environmental Exploitation'>Environmental Exploitation</div>
+			<a href="#direction_text" style="position: absolute;top: -200px;">Skip to direction text</a>
+			<h1 id='direction_text' role='heading' aria-level="1">test</h1>
+			<div id='head_ing' aria-label='Flan' role='heading' aria-level="2">Flan</div>
+		</div>
+		<div id='responsive_container'>
+			 <div class="swiper-container">
+				<div class="swiper-wrapper" id="swiper_id"></div>
+			 </div>
+			<div id="swiper_control">
+				<div class="swiper-button-next" id='next_btn' aria-label='next arrow'></div>
+				<div class="swiper-button-prev" id='prev_btn' aria-label='previous arrow'></div>
+				<div id="navi" class="swiper-pagination"></div>
+			</div>
+		</div>
+		
+		<div id='begin_page'>
+			<div id='begin_dummy' role="none"></div>
+			<a href="#pageTitle" style="position: absolute;top: -200px;">Skip to main content</a>
+			<h1 class="beginPageTitle" id="pageTitle" role='heading' aria-level="1" aria-label="Examples of environmental exploitation">Examples of environmental exploitation</h1>
+			<img class="beginPageImage" id="pageImage" role="img" src="assets/images/beginPageSlide_1.png" aria-label="Examples of environmental exploitation" alt="Examples of environmental exploitation"> 
+			<div role='button' id='begin_btn' aria-label='Begin'>Begin</div>
+			<div id='begin_reverse_dummy'role="none"></div>
+		</div>
+	</div>
+	<div id='extra_tab' role="none"></div>
+</main>
+<script>
+		$.holdReady(true);
+		var preloadComplete=false;
+		$.getScript("./assets/js/lib/preloadjs-0.6.2.min.js", function() {
+			$.holdReady(false);
+			manifest = [
+				"assets/images/common/loading.gif",
+				"assets/images/slide_1.png",
+				"assets/images/slide_2.png",
+				"assets/images/slide_3.png",
+				"assets/images/slide_4.png",
+				"assets/images/common/prevnext.png",
+				"assets/images/common/arrow_down.png"
+			];
+			preload = new createjs.LoadQueue(true);
+			preload.addEventListener("progress", function() {
+				//console.log('Updating preloading progress...'+Math.round(preload.progress*100)+"%");
+			});
+			preload.addEventListener("complete", function(){
+				setTimeout(function(){
+					$('.preload').fadeOut();
+				},100)
+			});
+			preload.setMaxConnections(5);
+			preload.loadManifest(manifest);
+		});
+	
+	
+	$('#pageTitle').html(mainpage_text);
+	//$('#direction_text').html(direction_text);
+	for(i=0;i<slider.length;i++){
+		$('.swiper-wrapper').append('<div class="swiper-slide" id="slide_'+(i+1)+'"><div class="img_container" id="imgCont_'+(i+1)+'"><img role="img" class="slideImg" src="assets/images/slide_'+(i+1)+'.png"></div></div>');
+	}		   
+	 var swiper = new Swiper('.swiper-container', {
+			slidesPerView: 1,
+			spaceBetween: 20,
+			loop: false,
+			simulateTouch: true, 
+			allowTouchMove:true,
+			pagination: {
+				el: '.swiper-pagination',
+				clickable: true,
+			},
+			navigation: {
+				nextEl: '.swiper-button-next',
+				prevEl: '.swiper-button-prev',
+			},
+		});
+
+</script>
+<script type="text/javascript" src="assets/js/lib/preloadjs-0.6.2.min.js"></script>
+<script type="text/javascript" src="assets/js/lib/fitToScreen.js"></script>
+</body>
+</html>
