@@ -60,8 +60,9 @@ body {
 }
 
 .dir_text{
-	font-family: "SourceSansPro-Bold";
+	font-family: "SourceSansPro-Regular";
 	font-size: 14px;
+	font-weight: normal;
 }
 
 .titleText {
@@ -197,12 +198,15 @@ body {
 	font-size: 14px;
 	font-weight: bold;
 	color: #007098;
+	margin-bottom:5px;
 }
 
 #direction_text{
 	width: 95%;
 	position: relative;
 	margin-bottom: 25px;
+	font-family: "SourceSansPro-Regular";
+	font-size: 14px;
 	
 }
 #box_arrow{

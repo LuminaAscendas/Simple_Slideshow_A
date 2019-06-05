@@ -10,7 +10,7 @@ function resizeApp(){
 		var winHeight = $("#begin_page").height();
 		var appWidth = cont_1.offsetWidth;
 		var appHeight = cont_1.offsetHeight;	
-		winWidth = window.innerWidth; //retrieve current window width
+		winWidth = window.innerWidth-100; //retrieve current window width
 		winHeight = window.innerHeight;
 		  if(winWidth-60 < appWidth || winHeight-60 < appHeight)
         {
@@ -40,7 +40,7 @@ function resizeApp(){
 		var winHeight = $("#whole_container").height();
 		var appWidth = cont.offsetWidth;
 		var appHeight = cont.offsetHeight;	
-		winWidth = window.innerWidth; //retrieve current window width
+		winWidth = window.innerWidth-100; //retrieve current window width
 		winHeight = window.innerHeight; //retrieve current window height
 	  	if(winWidth-60 < appWidth || winHeight-60 < appHeight)
         {
