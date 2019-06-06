@@ -1,4 +1,4 @@
-var mainpage_text = "Examples of environmental exploitation"
+var mainpage_text = "Examples of Environmental Exploitation"
 var direction_text='<span class="direction">Directions:</span><span class="dir_text"> Click the forward (>) and back (<) arrows to continue through the slideshow of images.</span>'
 /* var direction_text='<span tabindex="-1" aria-hidden="true" class="direction">Directions:  </span><span aria-hidden="true" tabindex="-1" class="dir_text"> Click the forward (>) and back (<) arrows to continue through the slideshow of images.</span>' */
 var slider=[
