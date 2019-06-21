@@ -1942,8 +1942,13 @@ setTimeout(function(){
 		$('#arrow_'+(activeIndex+1)).css('display','block')//.attr('aria-label',$('#arrow_'+(activeIndex+1)).text());
 		//$('.text_container').css('display','none');
 		//$('#textcont_'+(swiper.activeIndex+1)).css('display','block');
-		$('#head_ing').html(slider[swiper.activeIndex].slide_Title);
-		$('#head_ing').attr('aria-label',slider[swiper.activeIndex].slide_Title);
+		setTimeout(function(){
+			$('#head_ing').attr('aria-label','');
+			$('#head_ing').html('');
+//			alert(slider[swiper.activeIndex].slide_Title);
+			$('#head_ing').attr('aria-label',slider[swiper.activeIndex].slide_Title);
+			$('#head_ing').html(slider[swiper.activeIndex].slide_Title);
+		},100);
 		transTextFun(swiper.activeIndex);
 		$('#close_btn').trigger('click');
 		set_tab()
